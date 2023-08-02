@@ -1,16 +1,22 @@
-import React from 'react';
-import {motion} from 'framer-motion';
+import React, {useState, useEffect} from 'react';
+import {motion, useMotionValue, useTransform, useAnimate} from 'framer-motion';
 import './styles.css';
 
-
-
 function App() {
-
-
-    return(
-        <motion.div className={'circle'} initial={{opacity: 0, backgroundColor: 'green'}} whileInView={{opacity: 1, backgroundColor: 'white'}} />  
-
-    )
+    const count = useMotionValue(0);
+    const rounded = useTransform(count, latest => Math.round(latest));
+    const [,animate] = useAnimate();
+    
+    useEffect(() => {
+      const controls = animate(count, 100)
+    
+      return controls.stop
+    }, [])
+    
+    return <motion.div>
+            {rounded}
+        </motion.div>
+  
 }
 
 export default App;
