@@ -1,11 +1,35 @@
 
 body{
     background-color: blue;
-    height: 10000px;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+
+}
+
+
+.lineOne{
+    width: 100%;
+    height: 10px;
+    background-color: red;
+}
+
+.lineTwo{
+    width: 100%;
+    height:10px;
+    background-color: green;
 }
 
 .box{
-    width: 400px;
-    height: 400px;
-    background-color: red;
+    width: 100px;
+    height: 100px;
+    background-color: purple
+}
+
+@media(max-width: 400px){
+    .list{
+        grid-template-columns: auto;
+    }
 }
