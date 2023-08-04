@@ -12,15 +12,8 @@ function App() {
 
   return (
     <div className={'container'}>
-        <div className={'box'}>
-          {isSelected && <motion.div className={'lineOne'} layoutId="underline" />  } 
-        </div>
-        <div className={'box'}>
-          {!isSelected && <motion.div className={'lineTwo'} layoutId="underline" />  }       
-        </div>
-        <button onClick={handleClick}>
-          click me
-        </button>
+         <motion.div className={'box'} initial={{opacity: 0, x: 0}} animate={{opacity: 1, x: 100}} 
+         transition={{type:'spring', bounce: 0.67, damping: 10}}/>
     </div>
 
   )
