@@ -4,9 +4,15 @@
 }
 
 :root{
-    --font: 'public sans'
+    --font: 'public sans';
+    --white: #ffffff;
+    --background-color-body: #FAFAFA;
+    --closest: 100;
+    --close: 75;
+    --far: 50;
+    --farther: 25;
+    --farthest: 0;
 }
-
 
 *{
     box-sizing: border-box;
@@ -17,4 +23,6 @@
 
 body{
     min-height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--background-color-body)
 }

@@ -1,0 +1,161 @@
+.container{
+    width: 1110px;
+    height: 656px; 
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 82px;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 447px;
+    position: relative;
+    z-index: var(--farther);
+    flex-shrink: 0;
+}
+
+.title{
+    color: #2D314D;
+    font-family: var(--font);
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 114.286%;
+    letter-spacing: -1px;
+}
+
+.desc{
+    color: #9597A5;
+    font-family: var(--font);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 155.556%;
+    letter-spacing: -0.281px;
+    margin-bottom: 12px;
+}
+
+.invite{
+    width: 163px;
+    height: 44px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #33D35E 0%, #2AB6D9 100%);
+    color: #FFF;
+    font-family: var(--font);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 200%;
+    border: none;
+    cursor: pointer;
+}
+
+.phone{
+    position: relative;
+    z-index: var(--farther);
+    width: 768px;
+    object-fit: contain;
+    left: 0;
+    top: 0;
+}
+
+.backgroundImage{
+    width: 1200px;
+    right: -300px;
+    bottom: 0px;
+    object-fit: contain;
+    position: absolute;
+    z-index: var(--farthest);
+}
+
+@media(max-width: 1325px){
+    .backgroundImage{
+        right: -600px;
+    }
+}
+
+@media(max-width: 1170px){
+    .container{
+        width: 90%;
+    }
+
+    .title{
+        font-size: 2.5rem;
+    }
+    .desc{
+        font-size: 0.9375rem;
+    }
+    .phone{
+        width: 600px;
+    }
+    .header{
+        width: 305px;
+    }
+}
+
+@media(max-width: 905px){
+
+    .backgroundImage{
+        right: -700px;
+    }
+
+    .phone{
+        left: -50px;
+    }
+}
+
+@media(max-width: 830px){
+    .container{
+        flex-direction: column-reverse;
+    }
+    .header{
+        width: 327px;
+        flex-shrink: initial;
+        text-align: center;
+        gap: 16px;
+    }
+    .desc{
+        margin-bottom: 16px;
+    }
+
+    .invite{
+        align-self: center;
+    }
+
+    .backgroundImage{
+        width: 1050px;
+        bottom: 350px;
+        right: -200px
+    }
+
+    .phone{
+        width: 450px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: -80px;
+        flex-shrink: 0;
+    }
+}
+
+
+@media(max-width: 670px){
+    .backgroundImage{
+        width: 670px;
+        right: initial;
+        right: 0px;
+        top: -150px
+    }
+}
+
+@media(max-width: 450px){
+    .phone{
+        width: 350px;
+        top: 10px;
+    }
+}

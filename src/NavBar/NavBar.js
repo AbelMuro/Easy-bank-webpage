@@ -1,103 +1,52 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './styles.module.css';
-import {motion} from 'framer-motion'
+import Links from './Links';
+import {motion} from 'framer-motion';
+import MobileNavBar from './MobileNavBar';
+import useMediaQuery from '../Hooks/useMediaQuery.js';
 import logo from './logos/logo.svg';
 
 function NavBar() {
-    const [linkHover, setLinkHover] = useState('');
+    const mobile = useMediaQuery('(max-width: 670px)');
 
-
-    const initialLine = {
-        opacity: 0
-    } 
-
-    const animateLine = {
-        opacity: 1
+    const variantsNavBar = {
+        hidden: {y: -70, opacity: 0},
+        show: {
+            y: 0, 
+            opacity: 1,
+            transition: {
+                when: 'beforeChildren',
+                staggerChildren: 0.2
+            }
+        }
     }
 
-    const transitionLine = {
-        type: 'tween',
-        duration: 0.4
+    const variantLogoAndButton = {
+        hidden: {y: -100, opacity: 0},
+        show: {y: 0, opacity: 1}
     }
 
-    const handleMouseEnter = (e) => {
-        if(!e.target.matches('.' + styles.link)) return;
-
-        const linkId = e.target.getAttribute('data-id');
-        console.log(e.target);
-        setLinkHover(linkId);
-    }
-
-    const handleMouseLeave = () => {
-        setLinkHover('');
-    }
-
-    return(
+    return (
         <motion.nav className={styles.container}
-            initial={{y: -70, opacity: 0}}
-            animate={{y: 0, opacity: 1}}
-            transition={{duration: 0.9}}
-        >
-            <div className={styles.content}>
-                <img src={logo} className={styles.logo}/>
-                <ul className={styles.links} onMouseLeave={handleMouseLeave}>
-                    <li className={styles.link} data-id={1} onMouseEnter={handleMouseEnter}>
-                        Home
-                        {linkHover === '1' && 
-                            <motion.div 
-                                className={styles.underline} 
-                                layoutId='line' 
-                                initial={initialLine}
-                                animate={animateLine}
-                                transition={transitionLine}/>}
-                    </li>
-                    <li className={styles.link} data-id={2} onMouseEnter={handleMouseEnter}>
-                        About
-                        {linkHover === '2' && 
-                            <motion.div 
-                                className={styles.underline} 
-                                layoutId='line' 
-                                initial={initialLine}
-                                animate={animateLine}
-                                transition={transitionLine}/>}
-                    </li>
-                    <li className={styles.link} data-id={3} onMouseEnter={handleMouseEnter}>
-                        Contact
-                        {linkHover === '3' && 
-                            <motion.div 
-                                className={styles.underline} 
-                                layoutId='line' 
-                                initial={initialLine}
-                                animate={animateLine}
-                                transition={transitionLine}/>}
-                    </li>
-                    <li className={styles.link} data-id={4} onMouseEnter={handleMouseEnter}>
-                        Blog
-                        {linkHover === '4' && 
-                            <motion.div 
-                                className={styles.underline} 
-                                layoutId='line' 
-                                initial={initialLine}
-                                animate={animateLine}
-                                transition={transitionLine}/>}
-                    </li>
-                    <li className={styles.link} data-id={5} onMouseEnter={handleMouseEnter}>
-                        Careers
-                        {linkHover === '5' && 
-                            <motion.div 
-                                className={styles.underline} 
-                                layoutId='line' 
-                                initial={initialLine}
-                                animate={animateLine}
-                                transition={transitionLine}/>}
-                    </li>
-                </ul>
-                <button className={styles.invite}>
-                    Request Invite
-                </button>
-            </div>
-        </motion.nav>
-    )
+            initial='hidden'
+            animate='show'
+            variants={variantsNavBar}
+            transition={{duration: 0.9, delay: 0.2}}>
+                {mobile ? <MobileNavBar/> : 
+                    <div className={styles.content}>
+                        <motion.img 
+                            src={logo} 
+                            className={styles.logo}
+                            variants={variantLogoAndButton}/>
+                        <Links/>
+                        <motion.button 
+                            className={styles.invite}
+                            variants={variantLogoAndButton}>
+                                Request Invite
+                        </motion.button>
+                    </div>}
+        </motion.nav>)
+    
 }
 
 export default NavBar;
