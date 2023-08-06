@@ -66,7 +66,7 @@
 .backgroundImage{
     width: 1200px;
     right: -300px;
-    bottom: 0px;
+    bottom: 120px;
     object-fit: contain;
     position: absolute;
     z-index: var(--farthest);
@@ -111,6 +111,7 @@
 @media(max-width: 830px){
     .container{
         flex-direction: column-reverse;
+        margin-bottom: 88px;
     }
     .header{
         width: 327px;
@@ -127,35 +128,43 @@
     }
 
     .backgroundImage{
-        width: 1050px;
-        bottom: 350px;
-        right: -200px
+        width: 670px;
+        right: initial;
+        right: 0px;
+        top: -170px;
+        transition: width 0.2s linear;
     }
 
     .phone{
         width: 450px;
-        position: fixed;
         left: 0;
         right: 0;
         margin: auto;
-        top: -80px;
+        top: 60px;
         flex-shrink: 0;
     }
 }
 
 
 @media(max-width: 670px){
-    .backgroundImage{
-        width: 670px;
-        right: initial;
-        right: 0px;
-        top: -150px
+    .container{
+        margin-bottom: 88px;
     }
 }
 
-@media(max-width: 450px){
+@media(max-width: 500px){
+    .container{
+        height: 560px;
+        gap: 41px;
+    }
+    .backgroundImage{
+        width: 500px;
+        top: -140px;
+        transition: all 0.2s linear;
+    }
+
     .phone{
-        width: 350px;
-        top: 10px;
+        width: 300px;
+        top: 0px;
     }
 }

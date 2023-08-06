@@ -13,6 +13,7 @@
     background: linear-gradient(135deg, #33D35E 0%, #2AB6D9 100%);
     position: absolute;
     bottom: 0px;
+    transition: none;
 }
 
 .link{

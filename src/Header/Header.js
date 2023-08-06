@@ -5,10 +5,9 @@ import useMediaQuery from '../Hooks/useMediaQuery';
 import images from './images';
 
 
-//this is where i left off, i will need to fix the exit animation for the background image element
 
 function Header() {
-    const mobile = useMediaQuery('(max-width: 670px)')
+    const mobile = useMediaQuery('(max-width: 830px)')
 
     const variantsHeader = {
         hidden: {
@@ -19,6 +18,7 @@ function Header() {
             x: 0,
             opacity: 1,
             transition: {
+                type: 'tween',
                 when: 'beforeChildren',
                 staggerChildren: 0.4
             }
@@ -43,6 +43,7 @@ function Header() {
                 animate='show'
                 variants={variantsHeader}
                 transition={{
+                    type: 'tween',
                     duration: 0.5
                 }}>
                     <motion.h1 className={styles.title} variants={variantsChildren}>
@@ -57,21 +58,25 @@ function Header() {
                         Request Invite
                     </motion.button>
             </motion.section>
-
             <motion.img 
                 className={styles.phone} 
                 src={images['phones']}
                 initial={{y: -600, opacity: 0}} 
                 animate={{y: 0, opacity: 1}}
-                transition={{duration: 0.7}}/>                
-            <AnimatePresence mode='wait'>
+                transition={{type: 'tween', duration: 0.7}}/>                
+            <AnimatePresence>
                 <motion.img 
                     className={styles.backgroundImage} 
                     src={images[mobile ? 'backgroundImageMobile' : 'backgroundImage']}
                     initial={{x: 400, opacity: 0}}
                     animate={{x: 0, opacity: 1}}
-                    exit={{opacity: 0, y: 100, transition: {duration: 0.2}}}
-                    transition={{duration: 1.3}}/>                
+                    key={images[mobile ? 'backgroundImageMobile' : 'backgroundImage']}
+                    exit={{
+                        opacity: 0, 
+                        x: 400, 
+                        transition: {type: 'tween', duration: 0.5}            
+                    }}
+                    transition={{type: 'tween', duration: 1.3}}/>                
             </AnimatePresence>
 
         </header>

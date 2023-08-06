@@ -31,7 +31,7 @@ function Links() {
                 className={styles.link} 
                 data-id={1} 
                 onMouseEnter={handleMouseEnter}
-                variants={variantLinks }>
+                variants={variantLinks}>
                 Home
                 {linkHover === '1' ? 
                     <motion.div 
