@@ -5,7 +5,7 @@ import articles from './Data';
 import images from './images';
 
 
-//this is where i left, off, i will need to fix the bug where the entire viewport shifts to the left
+//this is where i leftoff, i wll need to fix the bug with the Header component
 //and i also need to finish the animation for the article boxes below
 function LatestArticles() {
     const variantParent = {
