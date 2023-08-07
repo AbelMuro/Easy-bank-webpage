@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import Header from './Header';
 import CompanyDetails from './CompanyDetails';
 import LatestArticles from './LatestArticles';
+import FooterBar from './FooterBar';
 import './styles.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Header/>
         <CompanyDetails/>
         <LatestArticles/>
+        <FooterBar/>
       </>
         
     )

@@ -4,29 +4,46 @@ import {motion} from 'framer-motion';
 import articles from './Data';
 import images from './images';
 
-
-//this is where i leftoff, i wll need to fix the bug with the Header component
-//and i also need to finish the animation for the article boxes below
 function LatestArticles() {
     const variantParent = {
         hidden: {
+        },
+        show: {
             transition: {
                 staggerChildren: 0.3
             }
-        },
-        show: {}
+        }
     }
 
 
+    const variantChildren = {
+        hidden: {
+            opacity: 0,
+            y: 100
+        },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8
+            }
+        }
+    }
+
     return(
-        <motion.section className={styles.container}>
-            <motion.h1 className={styles.title} >
-                    Latest Articles
-            </motion.h1>
+        <motion.section 
+            className={styles.container} 
+            initial='hidden' 
+            whileInView='show' 
+            viewport={{once: true, amount: 0.8}}
+            variants={variantParent}>
+                <motion.h1 className={styles.title} variants={variantChildren}>
+                        Latest Articles
+                </motion.h1>
             {
                 articles.map((article, i) => {
                     return(
-                        <motion.div className={styles.article} key={i}>
+                        <motion.div className={styles.article} key={i} variants={variantChildren}>
                             <img src={images[article.image]} className={styles.article_image}/>
                             <p className={styles.article_author}>
                                 {`By ${article.author}`}

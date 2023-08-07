@@ -4,22 +4,14 @@ import styles from './styles.module.css';
 import useMediaQuery from '../Hooks/useMediaQuery';
 import images from './images';
 
-
-
 function Header() {
     const mobile = useMediaQuery('(max-width: 830px)')
 
     const variantsHeader = {
-        hidden: {
-            x: -100,
-            opacity: 0,
-        },
+        hidden: {x: 0},
         show: {
             x: 0,
-            opacity: 1,
             transition: {
-                type: 'tween',
-                when: 'beforeChildren',
                 staggerChildren: 0.4
             }
         }
@@ -27,11 +19,11 @@ function Header() {
 
     const variantsChildren = {
         hidden: {
-            x: -100,
+            y: -100,
             opacity: 0
         },
         show: {
-            x: 0,
+            y: 0,
             opacity: 1
         }
     }
@@ -41,11 +33,7 @@ function Header() {
             <motion.section className={styles.header} 
                 initial='hidden' 
                 animate='show'
-                variants={variantsHeader}
-                transition={{
-                    type: 'tween',
-                    duration: 0.5
-                }}>
+                variants={variantsHeader}>
                     <motion.h1 className={styles.title} variants={variantsChildren}>
                         Next generation digital banking
                     </motion.h1>
@@ -58,12 +46,15 @@ function Header() {
                         Request Invite
                     </motion.button>
             </motion.section>
-            <motion.img 
-                className={styles.phone} 
-                src={images['phones']}
-                initial={{y: -600, opacity: 0}} 
-                animate={{y: 0, opacity: 1}}
-                transition={{type: 'tween', duration: 0.7}}/>                
+            <div>
+                <motion.img 
+                    className={styles.phone} 
+                    src={images['phones']}
+                    initial={{y: -600, opacity: 0}} 
+                    animate={{y: 0, opacity: 1}}
+                    transition={{type: 'tween', duration: 0.7}}/>                      
+            </div>
+          
             <AnimatePresence>
                 <motion.img 
                     className={styles.backgroundImage} 

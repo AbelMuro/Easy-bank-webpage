@@ -21,8 +21,9 @@
     transition: all 0.2s linear;
 }
 
-body{
-    min-height: 1000vh;
+html, body{
+    width: 100vw;
+    min-height: 100vh;
     overflow-x: hidden;
-    background-color: var(--background-color-body)
+    background-color: var(--background-color-body);
 }
