@@ -21,8 +21,8 @@
     transition: all 0.2s linear;
 }
 
-html, body{
-    width: 100vw;
+html, body, #root{
+    max-width: 100vw;               /* using max width to make sure the website doesnt shift to the left or right*/
     min-height: 100vh;
     overflow-x: hidden;
     background-color: var(--background-color-body);

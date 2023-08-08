@@ -5,7 +5,7 @@ import useMediaQuery from '../Hooks/useMediaQuery';
 import images from './images';
 
 function Header() {
-    const mobile = useMediaQuery('(max-width: 830px)')
+    const mobile = useMediaQuery('(max-width: 670px)')
 
     const variantsHeader = {
         hidden: {x: 0},
@@ -63,9 +63,8 @@ function Header() {
                     animate={{x: 0, opacity: 1}}
                     key={images[mobile ? 'backgroundImageMobile' : 'backgroundImage']}
                     exit={{
-                        opacity: 0, 
-                        x: 400, 
-                        transition: {type: 'tween', duration: 0.5}            
+                        opacity: 0,
+                        y: -400,     
                     }}
                     transition={{type: 'tween', duration: 1.3}}/>                
             </AnimatePresence>

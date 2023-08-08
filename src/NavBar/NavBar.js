@@ -21,9 +21,9 @@ function NavBar() {
         }
     }
 
-    const variantLogoAndButton = {
+    const variantChildren = {
         hidden: {y: -100, opacity: 0},
-        show: {y: 0, opacity: 1}
+        show: {y: 0, opacity: 1, transition: {duration: 0.4}},
     }
 
     return (
@@ -37,11 +37,11 @@ function NavBar() {
                         <motion.img 
                             src={logo} 
                             className={styles.logo}
-                            variants={variantLogoAndButton}/>
+                            variants={variantChildren }/>
                         <Links/>
                         <motion.button 
                             className={styles.invite}
-                            variants={variantLogoAndButton}>
+                            variants={variantChildren }>
                                 Request Invite
                         </motion.button>
                     </div>}

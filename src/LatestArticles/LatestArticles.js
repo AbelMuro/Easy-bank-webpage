@@ -3,8 +3,11 @@ import styles from './styles.module.css';
 import {motion} from 'framer-motion';
 import articles from './Data';
 import images from './images';
+import useMediaQuery from '../Hooks/useMediaQuery';
 
 function LatestArticles() {
+    const mobile = useMediaQuery('(max-width: 830px)')
+
     const variantParent = {
         hidden: {
         },
@@ -35,7 +38,7 @@ function LatestArticles() {
             className={styles.container} 
             initial='hidden' 
             whileInView='show' 
-            viewport={{once: true, amount: 0.8}}
+            viewport={{once: true, amount: mobile ? 0.2 : 0.8}}
             variants={variantParent}>
                 <motion.h1 className={styles.title} variants={variantChildren}>
                         Latest Articles

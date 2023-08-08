@@ -3,8 +3,10 @@ import details from './Data';
 import styles from './styles.module.css';
 import {motion} from 'framer-motion';
 import icons from './icons';
+import useMediaQuery from '../Hooks/useMediaQuery';
 
 function CompanyDetails() {
+    const mobile = useMediaQuery('(max-width: 830px)')
 
     const variantParent = {
         hidden: {},
@@ -41,8 +43,7 @@ function CompanyDetails() {
                 whileInView='show'
                 viewport={{
                     once: true,
-                    margin: '100px',
-                    amount: 0.8
+                    amount: mobile ? 0.3 : 0.8
                 }}
                 variants={variantParent}>
                 <motion.h1 className={styles.title} variants={variantChildren}>
