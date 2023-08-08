@@ -54,16 +54,12 @@ function Header() {
                     animate={{y: 0, opacity: 1}}
                     transition={{type: 'tween', duration: 0.7}}/>                      
             </div>
-          
-            <AnimatePresence>
-                <motion.img 
-                    className={styles.backgroundImage} 
-                    src={images[mobile ? 'backgroundImageMobile' : 'backgroundImage']}
-                    initial={{x: 400, opacity: 0}}
-                    animate={{x: 0, opacity: 1}}
-                    transition={{type: 'tween', duration: 1.3}}/>                
-            </AnimatePresence>
-
+            <motion.img 
+                className={styles.backgroundImage} 
+                src={images[mobile ? 'backgroundImageMobile' : 'backgroundImage']}
+                initial={{x: 400, opacity: 0}}
+                animate={{x: 0, opacity: 1}}
+                transition={{type: 'tween', duration: 1.3}}/>                
         </header>
     )
 }

@@ -1,0 +1,19 @@
+.invite{
+    width: 163px;
+    height: 44px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgb(51, 211, 94) 0%, rgb(42, 182, 217) 100%);
+    color: white;
+    font-family: var(--font);
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+}
+
+
+@media(max-width: 840px){
+    .invite{
+        width: 130px;
+    }
+}

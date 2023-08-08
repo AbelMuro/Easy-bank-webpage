@@ -1,4 +1,5 @@
 import React from 'react';
+import RequestButton from './RequestButton';
 import styles from './styles.module.css';
 import Links from './Links';
 import {motion} from 'framer-motion';
@@ -37,13 +38,9 @@ function NavBar() {
                         <motion.img 
                             src={logo} 
                             className={styles.logo}
-                            variants={variantChildren }/>
+                            variants={variantChildren}/>
                         <Links/>
-                        <motion.button 
-                            className={styles.invite}
-                            variants={variantChildren }>
-                                Request Invite
-                        </motion.button>
+                        <RequestButton variantChildren={variantChildren}/>
                     </div>}
         </motion.nav>)
     
