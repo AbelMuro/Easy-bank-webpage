@@ -2,9 +2,7 @@ import React from 'react';
 import styles from './styles.module.css';
 import logo from './icons/logo.svg';
 
-
-//this is where i left off, i will need to work on the media query in the stylesheet
-
+//this is where i left off, im almost done with the responsiveness of this component
 function FooterBar() {
     return(
         <footer className={styles.container}>

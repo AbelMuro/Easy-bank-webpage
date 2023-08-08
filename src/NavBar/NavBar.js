@@ -1,5 +1,5 @@
 import React from 'react';
-import RequestButton from './RequestButton';
+import RequestButton from '../Common/RequestButton';
 import styles from './styles.module.css';
 import Links from './Links';
 import {motion} from 'framer-motion';
@@ -40,7 +40,7 @@ function NavBar() {
                             className={styles.logo}
                             variants={variantChildren}/>
                         <Links/>
-                        <RequestButton variantChildren={variantChildren}/>
+                        <RequestButton variants={variantChildren}/>
                     </div>}
         </motion.nav>)
     

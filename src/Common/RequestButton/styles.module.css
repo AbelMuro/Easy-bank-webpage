@@ -1,3 +1,4 @@
+
 .invite{
     width: 163px;
     height: 44px;
@@ -10,6 +11,7 @@
     cursor: pointer;
     border: none;
 }
+
 
 
 @media(max-width: 840px){

@@ -6,7 +6,7 @@ import icons from './icons';
 import useMediaQuery from '../Hooks/useMediaQuery';
 
 function CompanyDetails() {
-    const mobile = useMediaQuery('(max-width: 830px)')
+    const mobile = useMediaQuery('(max-width: 550px)');
 
     const variantParent = {
         hidden: {},
@@ -43,7 +43,7 @@ function CompanyDetails() {
                 whileInView='show'
                 viewport={{
                     once: true,
-                    amount: mobile ? 0.3 : 0.8
+                    amount: mobile ? 0.4 : 0.8
                 }}
                 variants={variantParent}>
                 <motion.h1 className={styles.title} variants={variantChildren}>

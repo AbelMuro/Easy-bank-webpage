@@ -1,5 +1,6 @@
 import React from 'react';
-import {motion, AnimatePresence} from 'framer-motion';
+import {motion} from 'framer-motion';
+import RequestButton from '../Common/RequestButton';
 import styles from './styles.module.css';
 import useMediaQuery from '../Hooks/useMediaQuery';
 import images from './images';
@@ -42,18 +43,15 @@ function Header() {
                         Your Easybank account will be a one-stop-shop for spending, 
                         saving, budgeting, investing, and much more.
                     </motion.p>
-                    <motion.button className={styles.invite} variants={variantsChildren}>
-                        Request Invite
-                    </motion.button>
+                    <RequestButton variants={variantsChildren}/> 
             </motion.section>
-            <div>
-                <motion.img 
-                    className={styles.phone} 
-                    src={images['phones']}
-                    initial={{y: -600, opacity: 0}} 
-                    animate={{y: 0, opacity: 1}}
-                    transition={{type: 'tween', duration: 0.7}}/>                      
-            </div>
+            <motion.img 
+                className={styles.phone} 
+                src={images['phones']}
+                initial={{y: -600, opacity: 0}} 
+                animate={{y: 0, opacity: 1}}
+                transition={{type: 'tween', duration: 0.7}}/>                      
+
             <motion.img 
                 className={styles.backgroundImage} 
                 src={images[mobile ? 'backgroundImageMobile' : 'backgroundImage']}
