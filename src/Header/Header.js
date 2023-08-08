@@ -61,11 +61,6 @@ function Header() {
                     src={images[mobile ? 'backgroundImageMobile' : 'backgroundImage']}
                     initial={{x: 400, opacity: 0}}
                     animate={{x: 0, opacity: 1}}
-                    key={images[mobile ? 'backgroundImageMobile' : 'backgroundImage']}
-                    exit={{
-                        opacity: 0,
-                        y: -400,     
-                    }}
                     transition={{type: 'tween', duration: 1.3}}/>                
             </AnimatePresence>
 
