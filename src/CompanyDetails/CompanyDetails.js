@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import details from './Data';
 import styles from './styles.module.css';
 import {motion} from 'framer-motion';
@@ -7,6 +7,7 @@ import useMediaQuery from '../Hooks/useMediaQuery';
 
 function CompanyDetails() {
     const mobile = useMediaQuery('(max-width: 550px)');
+    const tablet = useMediaQuery('(max-width: 940px)')
 
     const variantParent = {
         hidden: {},
@@ -35,6 +36,15 @@ function CompanyDetails() {
         }
     }
 
+    const amount = useMemo(() => {
+        if(mobile)
+            return 0.3;
+        else if(tablet)
+            return 0.5;
+        else
+            return 0.8;
+    }, [mobile, tablet])
+
     return(
         <section className={styles.container} >
             <motion.div 
@@ -43,7 +53,7 @@ function CompanyDetails() {
                 whileInView='show'
                 viewport={{
                     once: true,
-                    amount: mobile ? 0.4 : 0.8
+                    amount: amount
                 }}
                 variants={variantParent}>
                 <motion.h1 className={styles.title} variants={variantChildren}>

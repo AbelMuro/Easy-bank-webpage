@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import styles from './styles.module.css';
 import {motion} from 'framer-motion';
 import articles from './Data';
@@ -6,7 +6,8 @@ import images from './images';
 import useMediaQuery from '../Hooks/useMediaQuery';
 
 function LatestArticles() {
-    const mobile = useMediaQuery('(max-width: 830px)')
+    const mobile = useMediaQuery('(max-width: 550px)');
+    const tablet = useMediaQuery('(max-width: 940px)');
 
     const variantParent = {
         hidden: {
@@ -17,8 +18,6 @@ function LatestArticles() {
             }
         }
     }
-
-
     const variantChildren = {
         hidden: {
             opacity: 0,
@@ -33,12 +32,21 @@ function LatestArticles() {
         }
     }
 
+    const amount = useMemo(() => {
+        if(mobile)
+            return 0.2;
+        else if(tablet)
+            return 0.5;
+        else
+            return 0.8;
+    }, [mobile, tablet])
+
     return(
         <motion.section 
             className={styles.container} 
             initial='hidden' 
             whileInView='show' 
-            viewport={{once: true, amount: mobile ? 0.2 : 0.8}}
+            viewport={{once: true, amount: amount}}
             variants={variantParent}>
                 <motion.h1 className={styles.title} variants={variantChildren}>
                         Latest Articles

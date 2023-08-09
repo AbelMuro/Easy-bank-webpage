@@ -11,7 +11,7 @@
 
 .overlay{
     display: none;
-    position: fixed;
+    position: absolute;
     top: 64px;
     left: 0;
     right: 0;

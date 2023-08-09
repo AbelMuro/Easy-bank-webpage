@@ -8,8 +8,6 @@ function RequestButton({variants}){
         {opacity: 0.4}
     );
 
-    useEffect(() => {
-    })
 
     return(   
             <motion.button 

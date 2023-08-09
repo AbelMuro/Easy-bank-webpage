@@ -19,3 +19,9 @@
         width: 130px;
     }
 }
+
+@media(max-width: 830px){
+    .invite{
+        align-self: center;
+    }
+}

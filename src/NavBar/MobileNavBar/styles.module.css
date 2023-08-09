@@ -1,6 +1,17 @@
 .container{
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: relative;
+    z-index: var(--close);
+}
+
+.content{
     width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
