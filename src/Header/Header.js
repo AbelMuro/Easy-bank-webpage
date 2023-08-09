@@ -57,7 +57,7 @@ function Header() {
                 src={images[mobile ? 'backgroundImageMobile' : 'backgroundImage']}
                 initial={{x: 400, opacity: 0}}
                 animate={{x: 0, opacity: 1}}
-                transition={{type: 'tween', duration: 1.3}}/>                
+                transition={{type: 'tween', duration: 2.3}}/>                
         </header>
     )
 }
