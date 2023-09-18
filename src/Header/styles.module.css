@@ -71,7 +71,7 @@
     object-fit: contain;
     position: absolute;
     z-index: var(--farthest);
-    transition: all 0.2s linear, opacity 0s, transform 0s;
+    transition: all 0.2s linear;
 }
 
 @media(max-width: 1325px){
