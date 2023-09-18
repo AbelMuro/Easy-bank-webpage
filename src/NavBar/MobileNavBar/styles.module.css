@@ -6,6 +6,7 @@
     background-color: white;
     position: relative;
     z-index: var(--close);
+    transition: none;
 }
 
 .content{
@@ -13,5 +14,4 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }

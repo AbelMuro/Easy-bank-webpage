@@ -1,7 +1,8 @@
 import React, {useState, useRef, useEffect} from 'react';
 import styles from './styles.module.css';
+import {motion} from 'framer-motion';
 
-function MenuIcon(){
+function MenuIcon({variants}){
     const [open, setOpen] = useState(false);
     const overlayRef = useRef();
     const dialogRef = useRef();
@@ -31,7 +32,7 @@ function MenuIcon(){
 
     return(
         <>
-            <button className={styles.button} onClick={handleToggle}>
+            <motion.button className={styles.button} onClick={handleToggle} variants={variants}>
                 <svg width="24" height={'24'} className={styles.svg_container}>
                     <rect
                         x={open ? '0.868164' : '0'}
@@ -57,7 +58,7 @@ function MenuIcon(){
                         fill="#2D314D"
                     />
                 </svg>
-            </button>   
+            </motion.button>   
             <div className={styles.overlay} ref={overlayRef}>
                 <dialog className={styles.dialog} ref={dialogRef}>
                     <ul className={styles.links}>
