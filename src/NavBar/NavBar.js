@@ -19,7 +19,7 @@ function NavBar() {
                 <motion.nav className={styles.container}
                     initial='hidden'
                     animate='show'
-                    transition={{staggerChildren: 0.4}}>
+                    transition={{staggerChildren: 0.3}}>
                             <div className={styles.content}>
                                 <motion.img 
                                     src={logo} 

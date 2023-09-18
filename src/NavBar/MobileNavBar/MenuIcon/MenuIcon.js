@@ -42,7 +42,6 @@ function MenuIcon({variants}){
                         height="1" 
                         fill="#2D314D"
                         transform={open ? 'rotate(45 0.868164 0.661133)' : ''}
-                        style={{transition: 'all 0.2s linear'}}
                     />
                     <rect
                         className={styles.rect}
@@ -51,7 +50,6 @@ function MenuIcon({variants}){
                         height="1" 
                         fill="#2D314D"
                         opacity={open ? 0 : 1}
-                        style={{transition: 'all 0.2s linear'}}
                     />
                     <rect
                         className={styles.rect}
@@ -61,7 +59,7 @@ function MenuIcon({variants}){
                         height="1" 
                         transform={open ? 'rotate(-45 0.161133 17.6317)' : ''}
                         fill="#2D314D"
-                        style={{transition: 'all 0.2s linear'}}
+
                     />
                 </svg>
             </motion.button>   
