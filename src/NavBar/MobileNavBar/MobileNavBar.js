@@ -4,7 +4,6 @@ import MenuIcon from './MenuIcon';
 import styles from './styles.module.css';
 import {motion} from 'framer-motion';
 
-
 function MobileNavBar() {
 
     const variants = {

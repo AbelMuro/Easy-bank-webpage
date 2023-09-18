@@ -7,7 +7,6 @@ import MobileNavBar from './MobileNavBar';
 import useMediaQuery from '../Hooks/useMediaQuery.js';
 import logo from './logos/logo.svg';
 
-
 function NavBar() {
     const mobile = useMediaQuery('(max-width: 670px)');
 
@@ -30,11 +29,6 @@ function NavBar() {
                                 <RequestButton variants={variantChildren}/>
                             </div>
                 </motion.nav>         
-
-      
-
-
-    
 }
 
 export default NavBar;
