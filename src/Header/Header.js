@@ -47,8 +47,8 @@ function Header() {
             <motion.img 
                     className={styles.backgroundImage} 
                     src={images[mobile ? 'backgroundImageMobile' : 'backgroundImage']}
-                    initial={{x: 400, opacity: 0}}
-                    animate={{x: 0, opacity: 1}}
+                    initial={{x: 400}}
+                    animate={{x: 0}}
                     transition={{duration: 1.3}}/>                
         </>
 
