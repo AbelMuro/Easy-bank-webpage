@@ -38,7 +38,7 @@ function Header() {
             <motion.img 
                 className={styles.phone} 
                 src={images['phones']}
-                initial={{y: -600, opacity: 0}} 
+                initial={{y: -400, opacity: 0}} 
                 animate={{y: 0, opacity: 1}}
                 transition={{duration: 1.7}}/>                      
 

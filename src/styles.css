@@ -22,7 +22,7 @@
 }
 
 html, body, #root{
-    width: 100%;               /* using max width to make sure the website doesnt shift to the left or right*/
+    width: 100vw;             
     min-height: 100vh;
     overflow-x: hidden;
     background-color: var(--background-color-body);
