@@ -50,7 +50,7 @@ function Header() {
                 src={images['phones']}
                 initial={{y: -600, opacity: 0}} 
                 animate={{y: 0, opacity: 1}}
-                transition={{type: 'tween', duration: 0.7}}/>                      
+                transition={{type: 'tween', duration: 1.7}}/>                      
 
             <motion.img 
                 className={styles.backgroundImage} 

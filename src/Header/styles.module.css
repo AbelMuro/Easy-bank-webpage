@@ -61,6 +61,7 @@
     object-fit: contain;
     left: 0;
     top: 0;
+    transition: all 0.2s linear, opacity 0s, transform 0s
 }
 
 .backgroundImage{
@@ -70,7 +71,7 @@
     object-fit: contain;
     position: absolute;
     z-index: var(--farthest);
-    transition: bottom 0.2s linear, top 0.2s linear, left 0.2s linear, right 0.2s linear;
+    transition: all 0.2s linear, opacity 0s, transform 0s
 }
 
 @media(max-width: 1325px){
