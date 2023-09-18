@@ -18,7 +18,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: all 0.2s linear;
+    transition: all 0.2s linear, opacity 0s;
 }
 
 html, body, #root{
