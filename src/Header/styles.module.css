@@ -1,3 +1,7 @@
+.background_container{
+    position: relative;
+}
+
 .container{
     width: 1110px;
     height: 656px; 
