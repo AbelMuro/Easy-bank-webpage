@@ -6,7 +6,7 @@ import useMediaQuery from '../Hooks/useMediaQuery';
 import images from './images';
 
 function Header() {
-    const mobile = useMediaQuery('(max-width: 670px)')
+    const mobile = useMediaQuery('(max-width: 670px)');
 
     const variantsChildren = {
         hidden: {
@@ -15,7 +15,8 @@ function Header() {
         },
         show: {
             y: 0,
-            opacity: 1
+            opacity: 1,
+            transition: {duration: 0.4}
         }
     }
 
@@ -42,13 +43,7 @@ function Header() {
                     initial={{y: -400, opacity: 0}} 
                     animate={{y: 0, opacity: 1}}
                     transition={{duration: 1.7}}/>                      
-            </header>        
-            <motion.img 
-                    className={styles.backgroundImage} 
-                    src={images[mobile ? 'backgroundImageMobile' : 'backgroundImage']}
-                    initial={{x: 400, opacity: 0}}
-                    animate={{x: 0, opacity: 1}}
-                    transition={{duration: 1.3}}/>                
+            </header>                       
         </>
 
     )
