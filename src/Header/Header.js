@@ -8,19 +8,9 @@ import images from './images';
 function Header() {
     const mobile = useMediaQuery('(max-width: 670px)')
 
-    const variantsHeader = {
-        hidden: {x: 0},
-        show: {
-            x: 0,
-            transition: {
-                staggerChildren: 0.4
-            }
-        }
-    }
-
     const variantsChildren = {
         hidden: {
-            y: -100,
+            y: -250,
             opacity: 0
         },
         show: {
@@ -34,7 +24,7 @@ function Header() {
             <motion.section className={styles.header} 
                 initial='hidden' 
                 animate='show'
-                variants={variantsHeader}>
+                transition={{staggerChildren: 0.6}}>
                     <motion.h1 className={styles.title} variants={variantsChildren}>
                         Next generation digital banking
                     </motion.h1>
@@ -50,14 +40,14 @@ function Header() {
                 src={images['phones']}
                 initial={{y: -600, opacity: 0}} 
                 animate={{y: 0, opacity: 1}}
-                transition={{type: 'tween', duration: 1.7}}/>                      
+                transition={{duration: 1.7}}/>                      
 
             <motion.img 
                 className={styles.backgroundImage} 
                 src={images[mobile ? 'backgroundImageMobile' : 'backgroundImage']}
                 initial={{x: 400, opacity: 0}}
                 animate={{x: 0, opacity: 1}}
-                transition={{type: 'tween', duration: 2.3}}/>                
+                transition={{duration: 2.3}}/>                
         </header>
     )
 }
