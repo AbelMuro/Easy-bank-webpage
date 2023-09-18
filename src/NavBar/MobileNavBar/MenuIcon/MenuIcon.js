@@ -35,6 +35,7 @@ function MenuIcon({variants}){
             <motion.button className={styles.button} onClick={handleToggle} variants={variants}>
                 <svg width="24" height={'24'} className={styles.svg_container}>
                     <rect
+                        className={styles.rect}
                         x={open ? '0.868164' : '0'}
                         y={open ? '0.661133' : '0'}
                         width="24" 
@@ -43,6 +44,7 @@ function MenuIcon({variants}){
                         transform={open ? 'rotate(45 0.868164 0.661133)' : ''}
                     />
                     <rect
+                        className={styles.rect}
                         y="5" 
                         width="24" 
                         height="1" 
@@ -50,6 +52,7 @@ function MenuIcon({variants}){
                         opacity={open ? 0 : 1}
                     />
                     <rect
+                        className={styles.rect}
                         x={open ? "0.161133" : '0'}
                         y={open ? "17.6317" : '10'} 
                         width="24" 
