@@ -60,7 +60,7 @@ function MenuIcon({variants}){
                         closed: { opacity: 1 },
                         open: { opacity: 0 }
                         }}
-                        transition={{ duration: 0.4 }}
+                        transition={{ duration: 0.2}}
                     />
                     <Path
                         variants={{
