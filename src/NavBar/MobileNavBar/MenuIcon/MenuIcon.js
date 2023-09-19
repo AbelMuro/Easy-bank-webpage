@@ -41,7 +41,7 @@ function MenuIcon({variants}){
                         width="24" 
                         height="1" 
                         fill="#2D314D"
-                        transform={open ? 'rotate(45 0.868164 0.661133)' : ''}
+                        transform={open ? 'rotate(45 0.868164 0.661133)' : 'rotate(0)'}
                     />
                     <rect
                         className={styles.rect}
@@ -57,7 +57,7 @@ function MenuIcon({variants}){
                         y={open ? "17.6317" : '10'} 
                         width="24" 
                         height="1" 
-                        transform={open ? 'rotate(-45 0.161133 17.6317)' : ''}
+                        transform={open ? 'rotate(-45 0.161133 17.6317)' : 'rotate(0)'}
                         fill="#2D314D"
 
                     />

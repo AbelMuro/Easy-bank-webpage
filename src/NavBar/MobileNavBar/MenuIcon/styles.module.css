@@ -1,6 +1,5 @@
 .rect{
     transition: all 0.2s linear;
-    -webkit-transition: all 0.2s linear;
 }
 
 .button{
