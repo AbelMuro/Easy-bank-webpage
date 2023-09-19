@@ -6,7 +6,6 @@
     background-color: white;
     position: relative;
     z-index: var(--close);
-    transition: none;
 }
 
 .content{
