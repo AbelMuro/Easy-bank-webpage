@@ -2,10 +2,23 @@ import React, {useState, useRef, useEffect} from 'react';
 import styles from './styles.module.css';
 import {motion} from 'framer-motion';
 
+const Path = props => (
+    <motion.path
+      fill="transparent"
+      className={styles.line}
+      strokeWidth="1.5"
+      stroke="hsl(0, 0%, 18%)"
+      strokeLinecap="round"
+      {...props}
+    />
+  );
+
+
 function MenuIcon({variants}){
     const [open, setOpen] = useState(false);
     const overlayRef = useRef();
     const dialogRef = useRef();
+
 
     const handleToggle = () => {
         setOpen(!open);
@@ -33,35 +46,30 @@ function MenuIcon({variants}){
     return(
         <>
             <motion.button className={styles.button} onClick={handleToggle} variants={variants}>
-                <svg width="24" height={'24'} className={styles.svg_container}>
-                    <rect
-                        className={styles.rect}
-                        x={open ? '0.868164' : '0'}
-                        y={open ? '0.661133' : '0'}
-                        width="24" 
-                        height="1" 
-                        fill="#2D314D"
-                        transform={open ? 'rotate(45 0.868164 0.661133)' : 'rotate(0)'}
+                <motion.svg className={styles.menuIcon} width="23" height="23" viewBox="0 0 23 23" initial={false} animate={open ? 'open' : 'closed'}>
+                    <Path
+                        variants={{
+                        closed: { d: "M 2 2.5 L 25 2.5" },
+                        open: { d: "M 3 16.5 L 17 2.5" }
+                        }}
+                        transition={{duration: 0.2}}
                     />
-                    <rect
-                        className={styles.rect}
-                        y="5" 
-                        width="24" 
-                        height="1" 
-                        fill="#2D314D"
-                        opacity={open ? 0 : 1}
+                    <Path
+                        d="M 2 9.423 L 25 9.423"
+                        variants={{
+                        closed: { opacity: 1 },
+                        open: { opacity: 0 }
+                        }}
+                        transition={{ duration: 0.4 }}
                     />
-                    <rect
-                        className={styles.rect}
-                        x={open ? "0.161133" : '0'}
-                        y={open ? "17.6317" : '10'} 
-                        width="24" 
-                        height="1" 
-                        transform={open ? 'rotate(-45 0.161133 17.6317)' : 'rotate(0)'}
-                        fill="#2D314D"
-
+                    <Path
+                        variants={{
+                        closed: { d: "M 2 16.346 L 25 16.346" },
+                        open: { d: "M 3 2.5 L 17 16.346" }
+                        }}
+                        transition={{duration: 0.2}}
                     />
-                </svg>
+                </motion.svg>
             </motion.button>   
             <div className={styles.overlay} ref={overlayRef}>
                 <dialog className={styles.dialog} ref={dialogRef}>

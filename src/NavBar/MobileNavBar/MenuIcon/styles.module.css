@@ -1,8 +1,12 @@
-.rect{
-    transition: all 0.2s linear;
+.line{
+    transition: none;
 }
 
+
+
 .button{
+    width: 23px;
+    height: 23px;
     background-color: transparent;
     border: none;
     cursor: pointer;
